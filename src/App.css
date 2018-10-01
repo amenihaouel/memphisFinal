@@ -1,0 +1,360 @@
+/* -- General App -- */
+
+.App {
+  background-color: #f7f7f7;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #b7b0b0;
+  height: 8vh;
+  color: white;
+  /*display: flex;*/
+  /*align-items: center;*/
+  padding: 10px 20px 10px 20px;
+}
+
+.App-title {
+  font-family: IBMPlexSans-Light, ibm-plex-sans;
+  font-size: 2rem;
+  margin :0;
+  font-weight: bold;
+}
+
+/* -- Header -- */
+
+.header-img{
+  width: auto;
+  max-height: 100%;
+  margin: 0 10px;
+  /*height: 8vh;*/
+}
+
+.header-menu {
+  height: 8vh;
+  float: right;
+  max-height: 100%;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lines {
+  height: 77%;
+  cursor: pointer;
+}
+
+/* -- Map -- */
+
+.map-container {
+  width: 90%;
+  height: 40vh;
+  margin: auto;
+  margin-top: 4vh;
+  position: relative;
+  -webkit-box-shadow: 3px 3px 7px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 7px -2px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 7px -2px rgba(0,0,0,0.75);
+}
+
+.map-sizes-container{
+  width: 90%;
+  height: 40vh;
+  margin: 0;
+}
+
+.map-header, .store-map-header{
+  height: 15%;
+  background-color: white;
+  color: #626366;
+  font-size: 1.2rem;
+}
+
+.map-header span, .store-map-header span, .card-title span{
+  height: 100%;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.map {
+  display: inline;
+}
+
+.plan{
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  -webkit-box-shadow: 3px 3px 1px -2px rgba(0,0,0,1);
+  -moz-box-shadow: 3px 3px 1px -2px rgba(0,0,0,1);
+  box-shadow: 3px 3px 1px -2px rgba(0,0,0,1);
+}
+
+.plan .temp-img-plan-main{
+  height: 85%;
+}
+
+.temp-img-plan-1, .temp-img-plan-2, .temp-img-plan-3, .temp-img-plan-4{
+  position: absolute;
+  cursor: pointer;
+}
+
+.temp-img-plan-1{
+  height: 10%;
+  top: 60px;
+  left: 80px;
+}
+
+.temp-img-plan-2 {
+  height: 10%;
+  top: 60px;
+  left: 100px;
+}
+
+.temp-img-plan-3{
+  height: 10%;
+  top: 140px;
+  left: 150px;
+}
+
+.temp-img-plan-4 {
+  height: 10%;
+  top: 140px;
+  left: 170px;
+}
+
+.actual-map{
+  width: 50%;
+}
+
+
+/* -- Cards -- */
+
+.card-title{
+  height: 25%;
+  background-color: white;
+  color: #626366;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.card-content{
+  height: 75%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.card-left-content, .card-right-content{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.card-left-content-iot {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.card-right-content-iot {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.card-data {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  color: #626366;
+}
+
+.card-data-value {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-info-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #757679;
+  font-weight: bold;
+  margin-top: 1%;
+}
+
+.temp-img {
+  max-height: 80%;
+  max-width: 100%;
+  height: 100%;
+  width: auto;
+}
+
+.first-column, .second-column{
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-left: 30px;
+}
+
+.div-display{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+  margin-top: 4vh;
+  height: 38vh;
+}
+
+.temp-display{
+  font-size: 30px;
+}
+
+.font-display{
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  -webkit-box-shadow: 3px 3px 1px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 1px -2px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 1px -2px rgba(0,0,0,0.75);
+  background-color: white;
+  transition: 0.3s;
+  font-size: larger;
+  width: 100%;
+  height: 45%;
+  flex-direction: column;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.number-display {
+  display: flex;
+  font-weight: bold;
+}
+
+.notif{
+  text-align: center;
+  font-size: 0.7rem;
+}
+.number-font-display{
+  font-size: 15px;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+.App-intro {
+  font-size: large;
+}
+.bx--modal-container{
+  background-color:grey;
+}
+.bx--modal-container{
+  border-top: 	#3d70b2;
+}
+
+/* -- Common -- */
+
+/* .right {
+  float: right;
+} */
+
+.smaller {
+  font-size: 0.7rem;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
+
+.red {
+  color: #c71810;
+  font-weight: bold;
+}
+
+
+@media (max-width: 1000px) {
+  .div-display{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200vh;
+  }
+
+  .store-map-header{
+    height: 10vh;
+  }
+
+  .plan{
+    width: 90vw;
+    height: 90vw;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .first-column, .second-column{
+    width: 100%;
+    height: 80vh;
+    flex: 1;
+    margin: 30px 0;
+  }
+
+  .card{
+    height: 25vh;
+    margin: 30px 0;
+  }
+}
+
+agm-map{ height: 800px; width: 100% ; }
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

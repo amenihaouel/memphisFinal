@@ -1,0 +1,7 @@
+---
+applications:
+- name: memphis-dashboard
+  host: memphis-dashboard
+  domain: eu-gb.mybluemix.net
+  memory: 1024M
+  instances: 1
