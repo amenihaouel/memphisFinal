@@ -31,7 +31,9 @@ const modalStyles = {
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
-    transform: "translate(-50%, -50%)"
+    transform: "translate(-50%, -50%)",
+    height: "500px", // <-- This sets the height
+    overlfow: "scroll"
   }
 };
 
@@ -40,7 +42,9 @@ Modal.setAppElement("#root");
 class App extends Component {
   state = {
     tempTab: [],
+    rawTempData: [],
     lastTemp: "",
+    lastTempDate: "",
     time: "",
     modalIsOpen: false,
     doorModalIsOpen: false,
@@ -171,18 +175,21 @@ class App extends Component {
   };
 
   processTempData(json) {
+    var tmpTab = [];
+    for (var i = 0; i < json.length; i++) {
+      var element = { x: json[i].timestring, y: json[i].data };
+      tmpTab.push(element);
+    }
     this.setState({
-      lastTemp: json[json.length - 1],
-      tempTab: json
+      lastTemp: json[json.length - 1].data,
+      lastTempDate: json[json.length - 1].time,
+      tempTab: tmpTab,
+      rawTempData: json
     });
   }
 
-  addElementToDataTempCurrent(yValue) {
-    console.log("yvalue ", yValue);
-    var lengthTab = this.state.dataTempCurrent.data.length;
-    var xValue =
-      parseInt(this.state.dataTempCurrent.data[lengthTab - 1].x) + 120000;
-    var newData = { x: xValue.toString(), y: yValue };
+  addElementToDataTempCurrent(jsonObject) {
+    var newData = { x: jsonObject.time, y: jsonObject.data };
     console.log("newData ", newData);
     var tmpTab = this.state.dataTempCurrent.data;
     tmpTab.push(newData);
@@ -203,10 +210,10 @@ class App extends Component {
      * Before opening modal we setState for datat with real temperature sensor data
      */
     var tmpTab = [];
-    for (var i = 0; i < this.state.dataTempCurrent.data.length; i++) {
+    for (var i = 0; i < this.state.rawTempData.length; i++) {
       var tmp = {
-        x: this.state.dataTempCurrent.data[i].x,
-        y: this.state.tempTab[i]
+        x: this.state.rawTempData[i].time,
+        y: this.state.rawTempData[i].data
       };
       tmpTab.push(tmp);
     }
@@ -275,11 +282,14 @@ class App extends Component {
       console.log("json Object : ", jsonObject);
       if (jsonObject.device == "88AD22") {
         //this.updateLastTemp(jsonObject.data);
+        var element = { x: jsonObject.timestring, y: jsonObject.data };
         this.setState({
           lastTemp: jsonObject.data,
-          tempTab: [...this.state.tempTab, jsonObject.data]
+          lastTempDate: jsonObject.time,
+          tempTab: [...this.state.tempTab, element],
+          rawTempData: [...this.state.rawTempData, jsonObject]
         });
-        //this.addElementToDataTempCurrent(jsonObject.data);
+        this.addElementToDataTempCurrent(jsonObject);
       }
     };
 
@@ -326,9 +336,10 @@ class App extends Component {
   }
 
   render() {
-    const { lastTemp, time, tempTab } = this.state;
+    const { lastTemp, time, tempTab, lastTempDate } = this.state;
     console.log("lastTemp ", lastTemp);
     console.log("tempTab ", tempTab);
+    console.log("lasttempDate ", lastTempDate);
 
     return (
       <div className="App">
@@ -339,6 +350,15 @@ class App extends Component {
           contentLabel="Temp chart"
         >
           <Tempchart data={this.state.dataTempCurrent} />
+
+          <ul>
+            {this.state.tempTab.map(value => (
+              <li>
+                {" "}
+                Température : {value.y}, relevé à {value.x}{" "}
+              </li>
+            ))}
+          </ul>
         </Modal>
 
         <Modal
@@ -370,7 +390,7 @@ class App extends Component {
         </header>
         <div className="map-container">
           <div className="map-header">
-            <span>Tableau de bord du magasin connecté</span>
+            <span>Cartographie des magasins</span>
           </div>
           <Map className="actual-map" />
         </div>
@@ -429,7 +449,7 @@ class App extends Component {
                   <div className="card-info-title">
                     <div className="font-display">
                       {moment
-                        .unix(this.state.dataTempCurrent.data[0].x)
+                        .unix(this.state.lastTempDate)
                         .format("HH:mm DD/MM")}
                     </div>
                     {/*<div className="font-display"> à {time}</div>*/}
@@ -456,7 +476,7 @@ class App extends Component {
                 <div className="card-left-content">
                   <div className="card-data">
                     <div className="card-data-value">
-                      <div className="number-display">20</div>
+                      <div className="number-display">2031</div>
                       <div className="smaller">(kwh)</div>
                     </div>
                     <div className="icon-display">
