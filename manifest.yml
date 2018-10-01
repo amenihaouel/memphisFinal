@@ -1,7 +1,7 @@
 ---
 applications:
-- name: memphis-dashboard
-  host: memphis-dashboard
+- name: le4-dashboard
+  host: le4-dashboard
   domain: eu-gb.mybluemix.net
   memory: 1024M
   instances: 1
