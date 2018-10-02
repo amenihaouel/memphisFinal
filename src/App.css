@@ -278,6 +278,12 @@
   text-align: center;
   font-size: 0.7rem;
 }
+.notifO{
+  text-align: center;
+  margin-left: -10%;
+  font-size: 0.7rem;
+  
+}
 .number-font-display{
   font-size: 15px;
 }

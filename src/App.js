@@ -804,7 +804,7 @@ class App extends Component {
           this.state.dataTempCurrent.data.length
         }
       fois </div> </div > <div className = "card-info-title" >
-        <div className = "notif" > Dernière semaine </div> </div > </div> </div > </div>
+        <div className = "notif" > Dernières 5h </div> </div > </div> </div > </div>
 
         <div className = "card" >
         <div className = "card-title" >
@@ -837,12 +837,17 @@ class App extends Component {
         <div className = "card-data" >
         <div className = "red center" > {
           this.state.lastDoor
-        }  nombre Ouverture </div> <div className = "icon-display" >
+        }  Ouvertures  </div> <div className = "icon-display" >
+      
         <img className = "temp-img"
       src = {
         doors
       }
-      /> </div > </div> {
+      />  
+      </div > 
+      
+      </div>
+      <div className = "notifO" > Dernières 10 minutes  </div>   {
       /*                  <div className="card-info-title">
                           <div className="font-display">il y a 3 minutes</div>
                         </div>*/
@@ -853,7 +858,7 @@ class App extends Component {
     } alertes </div> 
     </div > 
     <div className = "card-info-title" >
-    <div className = "notif" > Nombre des dernières Alertes  </div> 
+    <div className = "notif" > Dernières 5 heurs   </div> 
     </div > </div> </div > </div>
 
   { /* Variations temp */ } <div className = "card"
