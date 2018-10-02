@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import './login.css';
+import avatar from "./loginImg/avatar.png";
+
 
 class Login extends Component {
 
@@ -29,8 +31,12 @@ class Login extends Component {
         }
 
         return (
+            
+         
             <div className="loginbox">
-                {/* <img src="avatar.png" className="avatar" /> */}
+              
+           
+                <img src= {avatar} className="avatar" /> 
                 <h1>Login</h1>
                 <form>
                     <p>Utilisateur</p>
