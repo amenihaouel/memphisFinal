@@ -238,6 +238,7 @@ class App extends Component {
           })
           .then(json => {
             this.processTempData(id, json);
+        
           })
           .catch(err => {
             this.setState({
@@ -259,6 +260,7 @@ class App extends Component {
           })
           .then(json => {
             this.processTempData(id, json);
+          
           })
           .catch(err => {
             this.setState({
@@ -280,6 +282,7 @@ class App extends Component {
           })
           .then(json => {
             this.processTempData(id, json);
+          
           })
           .catch(err => {
             this.setState({
@@ -289,9 +292,10 @@ class App extends Component {
         break;
     }
   };
-
+    
   processTempData(id, json) {
     var tmpTab = [];
+    let nbrNotifs = 0;
     for (var i = 0; i < json.length; i++) {
       var element = {
         x: json[i].time,
@@ -299,13 +303,42 @@ class App extends Component {
       };
       tmpTab.push(element);
     }
+    switch(id){
+    case 1:
+    {
+      tmpTab.forEach(function(el){
+      if(el.y <-1 || el.y>7)
+          nbrNotifs ++
+      });
+    }
+    break;
+    case 2:
+    {
+      tmpTab.forEach(function(el){
+        if(el.y <-1 || el.y>5)
+            nbrNotifs ++
+        });
+    }
+    break;
+    case 3:
+    {
+      tmpTab.forEach(function(el){
+        if(el.y <-1 || el.y>5)
+            nbrNotifs ++
+        });
+    }
+    break;
+  }
+    console.log("nnnnnn",nbrNotifs);
     this.setState({
       lastTemp: json[json.length - 1].data,
       lastTempDate: json[json.length - 1].time,
       tempTab: tmpTab,
+      nbrNotifsTemp: nbrNotifs,
       rawTempData: json
     });
   }
+ 
 
   processDoorData(id, json) {
     var tmpDoor = [];
@@ -801,7 +834,7 @@ class App extends Component {
         } </div> </div > <div className = "card-right-content" >
         <div className = "card-data" >
         <div className = "number-display" > {
-          this.state.dataTempCurrent.data.length
+          this.state.nbrNotifsTemp
         }
       fois </div> </div > <div className = "card-info-title" >
         <div className = "notif" > Dernières 5h </div> </div > </div> </div > </div>
