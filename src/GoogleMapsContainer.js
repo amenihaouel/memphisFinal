@@ -49,10 +49,12 @@ class GoogleMapsContainer extends React.Component {
 						marker = { this.state.activeMarker }
 						visible = { this.state.showingInfoWindow }
 						style = {{width: '90%', height: '34vh' }}
+
+						
 					>
 					
-						Your Connected Shop<br />
-							Champs elysées
+						Le 4<br />
+							
 					
 					</InfoWindow>
 				</Map>

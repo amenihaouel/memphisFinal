@@ -19,19 +19,19 @@ class Map extends Component {
 				<AnyReactComponent
 					lat={48.870936}
 					lng={2.309818}
-					text={'Your Connected Shop '}
+					text={'LE 4 '}
 				/>
 				<AnyReactComponent
 					lat={48.88}
 					lng={2.309818}
-					text={'Your Connected Shop 2'}
+					text={'LE 4 2'}
 				/>
 			</div>
 		);
 		return (
 			<React.Fragment>
 				<GoogleMapReact
-					bootstrapURLKeys={{ key: 'AIzaSyDlQGqKdKm2zl2mttCY6ejBEirIEpNw6ek', v: '3;31' }}
+					bootstrapURLKeys={{ key: 'AIzaSyAEWC-wj6HYShvfHmb_lLWtit3IonIvaUI', v: '3;31' }}
 					defaultCenter={this.props.center}
 					defaultZoom={this.props.zoom}
 					onChildMouseEnter={this.onChildMouseEnter}

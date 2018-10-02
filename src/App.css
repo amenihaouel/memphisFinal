@@ -11,7 +11,7 @@
 
 .App-header {
   background-color: #b7b0b0;
-  height: 8vh;
+  height: 13vh;
   color: white;
   /*display: flex;*/
   /*align-items: center;*/
@@ -42,6 +42,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1%;
 }
 
 .lines {
@@ -90,6 +91,7 @@
 .plan{
   height: 100%;
   position: relative;
+  width: 35%;
   flex-direction: column;
   display: flex;
   -webkit-box-shadow: 3px 3px 1px -2px rgba(0,0,0,1);
@@ -101,35 +103,44 @@
   height: 85%;
 }
 
-.temp-img-plan-1, .temp-img-plan-2, .temp-img-plan-3, .temp-img-plan-4{
+.temp-img-plan-1, .temp-img-plan-2, .temp-img-plan-3, .temp-img-plan-4, .temp-img-plan-5, .temp-img-plan-6{
   position: absolute;
   cursor: pointer;
 }
 
 .temp-img-plan-1{
   height: 10%;
-  top: 60px;
-  left: 80px;
+  top: 20%;
+  left: 43%;
 }
 
 .temp-img-plan-2 {
   height: 10%;
-  top: 60px;
-  left: 100px;
+  top: 20%;
+  left: 38%;
 }
 
 .temp-img-plan-3{
   height: 10%;
-  top: 140px;
-  left: 150px;
+  top: 45%;
+  left: 30%;
 }
 
 .temp-img-plan-4 {
   height: 10%;
-  top: 140px;
-  left: 170px;
+  top: 45%;
+  left: 25%;
 }
-
+.temp-img-plan-5 {
+  height: 10%;
+  top: 70%;
+  left: 83%
+}
+.temp-img-plan-6 {
+  height: 10%;
+  top: 70%;
+  left: 87%;
+}
 .actual-map{
   width: 50%;
 }
