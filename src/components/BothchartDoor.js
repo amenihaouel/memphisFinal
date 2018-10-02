@@ -3,11 +3,11 @@ import Chart from 'chart.js';
 import './tempchart.css';
 import * as moment from 'moment';
 
-class BothChart extends Component {
+class BothChartDoor extends Component {
 
     state = {
-        data: this.props.data.data.temp,
-        dataDoor: this.props.data.data.door,
+        data: this.props.data.data.door,
+        dataDoor: this.props.data.data.alert,
     }
 
     componentDidMount = () => {
@@ -31,10 +31,8 @@ class BothChart extends Component {
 
         const minYChart = minY - 1;
         const maxYChart = maxY + 1;
-
+/*
             console.log('DOOR', this.state.dataDoor);
-
-            /*
             const newData = [];
             this.state.dataDoor.data.forEach((event, i) => {
                 (event.y === 1 || event.y === 'Ouverte') ? event.y = 'Ouverte' : event.y = 'Fermée';
@@ -47,7 +45,7 @@ class BothChart extends Component {
             const newComponentData = this.state.dataDoor;
             newComponentData.data = newData;
             this.setState({ dataDoor: newComponentData });
-            */
+*/
         // set time labels
         const customTimeLabels = [];
         this.state.data.data.forEach((temp) => {
@@ -81,18 +79,15 @@ class BothChart extends Component {
                         id: 'temp',
                         display: true,
                         ticks: {
-                            suggestedMin: minYChart,
+                            suggestedMin: 0,
                             suggestedMax: maxYChart,
                         }
                     },
                     {
                         id: 'door',
                         display: true,
-                        ticks: {
-                            suggestedMin: 0
-                        } /*,
                         type: 'category',
-                        labels: ['Ouverte', 'Fermée'],*/
+                        labels: ['Ouverte', 'Fermée'],
                     },
                     ]
                 },
@@ -114,4 +109,4 @@ class BothChart extends Component {
     }
 }
 
-export default BothChart;
+export default BothChartDoor;
