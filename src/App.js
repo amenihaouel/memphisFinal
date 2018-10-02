@@ -310,12 +310,20 @@ class App extends Component {
         alert: json[i].alert
       };
       tmpDoor.push(element);
+     
     }
-  
+    console.log("aaaa1",tmpDoor);
+    let nbrAlerts = 0;
+    tmpDoor.forEach(function(el){
+      if(el.alert)
+       nbrAlerts++;
+    });
+    console.log("aaaa",nbrAlerts);
     this.setState({
       lastDoor: json[json.length - 1].data,
       lastDoorDate: json[json.length - 1].time,
       doorTab: tmpDoor,
+      nbrLastAlerts: nbrAlerts,
       rawDoorData: json
     });
   }
@@ -942,70 +950,43 @@ class App extends Component {
       /*                  <div className="card-info-title">
                           <div className="font-display">il y a 3 minutes</div>
                         </div>*/
-    } <
-    /div> <
+    } </div> <
   div className = "card-right-content" >
     <
     div className = "card-data" >
     <
     div className = "number-display" > {
-      this.state.dataDoorCurrent.data.length
-    }
-  alertes <
-    /div> < /
-  div > <
-    div className = "card-info-title" >
-    <
-    div className = "notif" > Dernière 24 h < /div> < /
-  div > <
-    /div> < /
-  div > <
-    /div>
+      this.state.nbrLastAlerts
+    } alertes </div> 
+    </div > 
+    <div className = "card-info-title" >
+    <div className = "notif" > Nombre des dernières Alertes  </div> 
+    </div > </div> </div > </div>
 
-  { /* Variations temp */ } <
-  div className = "card"
+  { /* Variations temp */ } <div className = "card"
   onClick = {
       this.onWatsonClick.bind(this, 1)
-    } >
-    <
-    div className = "card-title" >
-    <
-    span > Watson IoT Insights < /span> < /
-  div > <
-    div className = "card-content" >
-    <
-    div className = "card-left-content-iot" >
-    <
-    div className = "card-info-title" >
-    <
-    div className = "notif" >
+    }> 
+    <div className = "card-title" >
+    <span> Watson IoT Insights </span> </div> <div className = "card-content" >
+    <div className = "card-left-content-iot" >
+    <div className = "card-info-title" >
+    <div className = "notif" >
     "Variation de température causée par l'ouverture des
-  portes.
-  " < /
-  div > <
-    /div> < /
-  div >
+  portes." </div > </div> </div >
 
-    <
-    div className = "card-right-content-iot" >
-    <
-    div className = "card-data" >
-    <
-    div className = "icon-display" >
-    <
-    img className = "temp-img"
-  src = {
-    watson
-  }
-  /> < /
-  div > <
-    /div> < /
-  div > <
-    /div> < /
-  div > <
-    /div> < /
-  div > <
-    /div>
+    <div className = "card-right-content-iot" >
+    <div className = "card-data" >
+    <div className = "icon-display" >
+    <img className = "temp-img"src = {watson}/> 
+    </div > 
+    </div> 
+    </div > 
+    </div> 
+    </div> 
+    </div> 
+    </div> 
+    </div>
 );
 }
 }
