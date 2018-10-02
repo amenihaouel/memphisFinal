@@ -6,6 +6,7 @@ import Modal from "react-modal";
 import "./App.css";
 import Tempchart from "./components/Tempchart";
 import Bothchart from "./components/Bothchart";
+import Login from "./components/Login";
 
 import Map from "./GoogleMapsContainer.js";
 import io from "socket.io-client";
@@ -41,6 +42,7 @@ Modal.setAppElement("#root");
 
 class App extends Component {
   state = {
+    connected: false,
     tempTab: [],
     rawTempData: [],
     lastTemp: "",
@@ -91,6 +93,7 @@ class App extends Component {
     },
     dataTemp1: {
       id: "1",
+      class: "category 1",
       title: "Température pour le capteur 1",
       device: "capteur 1",
       type: "temp",
@@ -107,6 +110,7 @@ class App extends Component {
     },
     dataTemp2: {
       id: "2",
+      class: "category 2",
       title: "Température pour le capteur 2",
       device: "capteur 2",
       type: "temp",
@@ -125,6 +129,7 @@ class App extends Component {
     },
     dataDoor2: {
       id: "3",
+      class: "category 2",
       title: "Ouverture pour le capteur 2",
       device: "capteur 2",
       type: "door",
@@ -141,6 +146,7 @@ class App extends Component {
     },
     dataDoor1: {
       id: "3",
+      class: "category 1",
       title: "Ouverture pour le capteur 1",
       device: "capteur 1",
       type: "door",
@@ -305,7 +311,8 @@ class App extends Component {
     this.openModal("temp");
   };
 
-  onDoorClick = id => {
+  onDoorClick = (couple) => {
+    console.log('couple', couple);
     this.openModal("door");
   };
 
@@ -313,13 +320,24 @@ class App extends Component {
     this.openModal("both");
   };
 
+  handleLogin = (status) => {
+    console.log('login', status);
+    this.setState({connected: status});
+  }
+
   setCurrentTempSensorTo(number) {
     if (number === 1) {
-      this.setState({ dataTempCurrent: this.state.dataTemp1 });
+      this.setState({ 
+        dataTempCurrent: this.state.dataTemp1,
+        dataDoorCurrent: this.state.dataDoor1 
+      });
       console.log("sensor 1", this.state.dataTemp1);
     } else {
       console.log("sensor 2", this.state.dataTemp2);
-      this.setState({ dataTempCurrent: this.state.dataTemp2 });
+      this.setState({ 
+        dataTempCurrent: this.state.dataTemp2,
+        dataDoorCurrent: this.state.dataDoor2 
+      });
     }
     console.log(this.state.dataTempCurrent);
   }
@@ -341,8 +359,9 @@ class App extends Component {
     console.log("tempTab ", tempTab);
     console.log("lasttempDate ", lastTempDate);
 
-    return (
-      <div className="App">
+    {if (this.state.connected) {
+      return (
+        <div className="App">
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal.bind(this, "temp")}
@@ -425,6 +444,8 @@ class App extends Component {
             <img className="temp-img-plan-main" src={Capture} />
           </div>
           <div className="first-column">
+
+
             {/* température */}
             <div
               className="card temp-card"
@@ -564,6 +585,15 @@ class App extends Component {
         </div>
       </div>
     );
+    } else {
+
+      // Rander the login if not connected
+      return (
+        <div>
+          <Login onLogin={this.handleLogin} key="1"></Login>
+        </div>
+      )
+    }}
   }
 }
 
