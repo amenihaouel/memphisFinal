@@ -615,6 +615,7 @@ class App extends Component {
       case 1:
         this.setState({
           doorSensor: "88B318",
+          dataTempCurrent: this.state.dataTemp1,
           dataDoorCurrent: this.state.dataDoor1
         });
         console.log("sensor 1", this.state.dataDoor1);
@@ -624,6 +625,7 @@ class App extends Component {
       case 2:
         this.setState({
           doorSensor: "88B329",
+          dataTempCurrent: this.state.dataTemp2,
           dataDoorCurrent: this.state.dataDoor2
         });
         console.log("sensor 2", this.state.dataDoor2);
@@ -633,6 +635,7 @@ class App extends Component {
       case 3:
         this.setState({
           doorSensor: "88B34C",
+          dataTempCurrent: this.state.dataTemp3,
           dataDoorCurrent: this.state.dataDoor3
         });
         console.log("sensor 3", this.state.dataDoor3);
@@ -655,10 +658,9 @@ class App extends Component {
       console.log("lasttempDate ", lastTempDate);
 
       {if (this.state.connected) {
-      return ( <
-          div className = "App" >
-          <
-          Modal isOpen = {
+      return ( 
+      <div className = "App" >
+          <Modal isOpen = {
             this.state.modalIsOpen
           }
           onRequestClose = {
@@ -668,18 +670,15 @@ class App extends Component {
             modalStyles
           }
           contentLabel = "Temp chart" >
-          <
-          Tempchart data = {
+          <Tempchart data = {
             this.state.dataTempCurrent
           }
           />
 
 
-          <
-          /Modal>
+          </Modal>
 
-          <
-          Modal isOpen = {
+          <Modal isOpen = {
             this.state.doorModalIsOpen
           }
           onRequestClose = {
@@ -689,15 +688,9 @@ class App extends Component {
             modalStyles
           }
           contentLabel = "Door chart" >
-          <
-          BothchartDoor data = {
-            this.state.dataDoorBothCurrent
-          }
-          /> < /
-          Modal >
+          <BothchartDoor data = {this.state.dataDoorBothCurrent}/> </Modal >
 
-          <
-          Modal isOpen = {
+          <Modal isOpen = {
             this.state.bothModalIsOpen
           }
           onRequestClose = {
@@ -707,67 +700,40 @@ class App extends Component {
             modalStyles
           }
           contentLabel = "Both chart" >
-          <
-          Bothchart data = {
+          <Bothchart data = {
             this.state.bothData
-          }
-          /> < /
-          Modal >
+          }/> </Modal >
 
-          <
-          header className = "App-header" > { /*<p className="App-title">Tableau de bord CASINO par IBM <img className="header-img" src={watson} /></p>*/ } <
-          img className = "header-img"
+          <header className = "App-header" > { /*<p className="App-title">Tableau de bord CASINO par IBM <img className="header-img" src={watson} /></p>*/ } <img className = "header-img"
           src = {
             casino
-          }
-          /> <
-          div className = "header-menu right" >
-          <
-          img className = "header-img right"
+          } /> <div className = "header-menu right" >
+          <img className = "header-img right"
           src = {
             ibm
-          }
-          /> <
-          img className = "header-img right"
+          }/> <img className = "header-img right"
           src = {
             notifications
           }
-          /> <
-          img className = "header-img right lines"
+          /> <img className = "header-img right lines"
           src = {
             lines
-          }
-          /> < /
-          div > <
-          /header> <
-          div className = "map-container" >
-          <
-          div className = "map-header" >
-          <
-          span > Cartographie des magasins < /span> < /
-          div > <
-          Map className = "actual-map" / >
-          <
-          /div>
+          }/> </div > </header> <div className = "map-container" >
+          <div className = "map-header" >
+          <span > Cartographie des magasins </span> </div > <Map className = "actual-map" / >
+          </div>
 
-          <
-          div className = "div-display" >
-          <
-          div className = "plan" >
-          <
-          div className = "store-map-header" >
-          <
-          span > Plan du magasin < /span> < /
-          div > <
-          img className = "temp-img-plan-1"
+          <div className = "div-display" >
+          <div className = "plan" >
+          <div className = "store-map-header" >
+          <span > Plan du magasin </span> </div > <img className = "temp-img-plan-1"
           src = {
             temps
           }
           onClick = {
             this.setCurrentTempSensorTo.bind(this, 1)
           }
-          /> <
-          img className = "temp-img-plan-2"
+          /> <img className = "temp-img-plan-2"
           src = {
             doors
           }
@@ -776,201 +742,113 @@ class App extends Component {
           }
           />
 
-          <
-          img className = "temp-img-plan-3"
+          <img className = "temp-img-plan-3"
           src = {
             temps
           }
           onClick = {
             this.setCurrentTempSensorTo.bind(this, 2)
-          }
-          /> <
-          img className = "temp-img-plan-4"
+          }/> <img className = "temp-img-plan-4"
           src = {
             doors
           }
           onClick = {
             this.setCurrentDoorSensorTo.bind(this, 2)
           }
-          /> <
-          img className = "temp-img-plan-5"
+          /> <img className = "temp-img-plan-5"
           src = {
             temps
           }
           onClick = {
             this.setCurrentTempSensorTo.bind(this, 3)
           }
-          /> <
-          img className = "temp-img-plan-6"
+          /> <img className = "temp-img-plan-6"
           src = {
             doors
           }
           onClick = {
             this.setCurrentDoorSensorTo.bind(this, 3)
           }
-          /> <
-          img className = "temp-img-plan-main"
+          /> <img className = "temp-img-plan-main"
           src = {
             Capture
           }
-          /> < /
-          div > <
-          div className = "first-column" > { /* température */ } <
-          div className = "card temp-card"
+          /> </div > <div className = "first-column" > { /* température */ } <div className = "card temp-card"
           onClick = {
             this.onTempClick.bind(this, 1)
-          } >
-          <
-          div className = "card-title" >
-          <
-          span >
+          }><div className = "card-title" ><span >
           Alertes Température {
             this.state.dataTempCurrent.device
-          } <
-          /span> < /
-          div > <
-          div className = "card-content" >
-          <
-          div className = "card-left-content" >
-          <
-          div className = "card-data" >
-          <
-          div className = "number-display center" > {
+          } </span> </div > <div className = "card-content" >
+          <div className = "card-left-content" >
+          <div className = "card-data" >
+          <div className = "number-display center" > {
             lastTemp
           }°
-          C <
-          /div> <
-          div className = "icon-display" >
-          <
-          img className = "temp-img center"
+          C </div> <div className = "icon-display" >
+          <img className = "temp-img center"
           src = {
             temps
           }
-          /> < /
-          div > <
-          /div> <
-          div className = "card-info-title" >
-          <
-          div className = "font-display" > {
+          /> </div > </div> <div className = "card-info-title" >
+          <div className = "font-display" > {
             moment
             .unix(this.state.lastTempDate)
             .format("HH:mm DD/MM")
-          } <
-          /div> { /* < div className = "font-display" > à {
+          } </div> { /* < div className = "font-display" > à {
             time
           } < /div>*/
-        } <
-        /div> < /
-      div > <
-        div className = "card-right-content" >
-        <
-        div className = "card-data" >
-        <
-        div className = "number-display" > {
+        } </div> </div > <div className = "card-right-content" >
+        <div className = "card-data" >
+        <div className = "number-display" > {
           this.state.dataTempCurrent.data.length
         }
-      fois <
-        /div> < /
-      div > <
-        div className = "card-info-title" >
-        <
-        div className = "notif" > Dernière semaine < /div> < /
-      div > <
-        /div> < /
-      div > <
-        /div>
+      fois </div> </div > <div className = "card-info-title" >
+        <div className = "notif" > Dernière semaine </div> </div > </div> </div > </div>
 
-        <
-        div className = "card" >
-        <
-        div className = "card-title" >
-        <
-        span > Consommation Electrique < /span> < /
-      div > <
-        div className = "card-content" >
-        <
-        div className = "card-left-content" >
-        <
-        div className = "card-data" >
-        <
-        div className = "card-data-value" >
-        <
-        div className = "number-display" > 220 < /div> <
-      div className = "smaller" > (kwh) < /div> < /
-      div > <
-        div className = "icon-display" >
-        <
-        img className = "temp-img"
+        <div className = "card" >
+        <div className = "card-title" >
+        <span > Consommation Electrique </span> </div > <div className = "card-content" >
+        <div className = "card-left-content" >
+        <div className = "card-data" >
+        <div className = "card-data-value" >
+        <div className = "number-display" > 220 </div> <div className = "smaller" > (kwh) </div> </div > <div className = "icon-display" >
+        <img className = "temp-img"
       src = {
         watts
       }
-      /> < /
-      div > <
-        /div> <
-      div className = "card-info-title" >
-        <
-        div className = "font-display" > Ce mois < /div> < /
-      div > <
-        /div> <
-      div className = "card-right-content" >
-        <
-        div className = "card-data" >
-        <
-        div className = "number-display red" > +3 % < /div> < /
-      div > <
-        div className = "card-info-title" >
-        <
-        div className = "notif" > Comparée au dernier mois < /div> < /
-      div > <
-        /div> < /
-      div > <
-        /div> < /
-      div >
+      /> </div > </div> <div className = "card-info-title" >
+        <div className = "font-display" > Ce mois </div> </div > </div> <div className = "card-right-content" >
+        <div className = "card-data" >
+        <div className = "number-display red" > +3 % </div> </div > <div className = "card-info-title" >
+        <div className = "notif" > Comparée au dernier mois </div> </div > </div> </div > </div> </div >
 
-        { /* Portes ouvertes/fermées */ } <
-        div className = "second-column" >
-        <
-        div className = "card"
+        { /* Portes ouvertes/fermées */ } <div className = "second-column" >
+        <div className = "card"
       onClick = {
           this.onDoorClick.bind(this, 1)
         } >
-        <
-        div className = "card-title" >
-        <
-        span >
+        <div className = "card-title" >
+        <span >
         Alertes Porte Meuble Froid {
           this.state.dataDoorCurrent.device
-        } <
-        /span> < /
-      div > <
-        div className = "card-content" >
-        <
-        div className = "card-left-content" >
-        <
-        div className = "card-data" >
-        <
-        div className = "red center" > {
+        } </span> </div > <div className = "card-content" >
+        <div className = "card-left-content" >
+        <div className = "card-data" >
+        <div className = "red center" > {
           this.state.lastDoor
-        }  nombre Ouverture <
-        /div> <
-      div className = "icon-display" >
-        <
-        img className = "temp-img"
+        }  nombre Ouverture </div> <div className = "icon-display" >
+        <img className = "temp-img"
       src = {
         doors
       }
-      /> < /
-      div > <
-        /div> {
+      /> </div > </div> {
       /*                  <div className="card-info-title">
                           <div className="font-display">il y a 3 minutes</div>
                         </div>*/
-    } </div> <
-  div className = "card-right-content" >
-    <
-    div className = "card-data" >
-    <
-    div className = "number-display" > {
+    } </div> <div className = "card-right-content" >
+    <div className = "card-data" >
+    <div className = "number-display" > {
       this.state.nbrLastAlerts
     } alertes </div> 
     </div > 
@@ -1004,7 +882,6 @@ class App extends Component {
     </div>
     );
     } else {
-
       // Rander the login if not connected
       return (
         <div>
@@ -1012,7 +889,7 @@ class App extends Component {
         </div>
       );
     }
-    }
   }
-
+}
+}
 export default App;
