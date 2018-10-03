@@ -31,7 +31,7 @@ class Map extends Component {
 		return (
 			<React.Fragment>
 				<GoogleMapReact
-					bootstrapURLKeys={{ key: 'AIzaSyDBtRP32S9POUhtaTSaRdsKhCAaKvrmA7M', v: '3;31' }}
+					bootstrapURLKeys={{ key: 'AIzaSyBxdqbNXFP2qUMJMshc1RD4nsoExIGeM8k', v: '3;31' }}
 					defaultCenter={this.props.center}
 					defaultZoom={this.props.zoom}
 					onChildMouseEnter={this.onChildMouseEnter}

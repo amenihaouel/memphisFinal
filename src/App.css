@@ -11,9 +11,9 @@
 
 .App-header {
   background-color: #b7b0b0;
-  height: 10vh;
+  height: 12.7vh;
   color: white;
-  /*display: flex;*/
+  /* display: flex; */
   /*align-items: center;*/
   padding: 10px 20px 10px 20px;
 }
@@ -42,7 +42,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1%;
+  /* margin-top: 1%; */
 }
 
 .lines {
