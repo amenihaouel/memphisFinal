@@ -45,6 +45,7 @@ class GoogleMapsContainer extends React.Component {
 						position = {{ lat: 48.870936, lng: 2.309818 }}
 						name = { 'Changing Colors Garage' }
 					/>
+					
 					<InfoWindow
 						marker = { this.state.activeMarker }
 						visible = { this.state.showingInfoWindow }
@@ -63,5 +64,5 @@ class GoogleMapsContainer extends React.Component {
 	  }
 	}
 	export default GoogleApiWrapper({
-		api: ('AIzaSyCjz8reC9ybEkD44fMKLaWSW8YLuagvmwk')
+		api: ('AIzaSyBxdqbNXFP2qUMJMshc1RD4nsoExIGeM8k')
 	})(GoogleMapsContainer)
