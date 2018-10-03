@@ -608,61 +608,73 @@ class App extends Component {
   setCurrentTempSensorTo(number) {
     switch (number) {
       case 1:
+      this.getLastDoor(1);
+      this.getLastTemp(1);
         this.setState({
           tempSensor: "88AD22",
           dataTempCurrent: this.state.dataTemp1,
           dataDoorCurrent: this.state.dataDoor1
         });
+        console.log('HERE', this.state.dataDoorCurrent);
         console.log("sensor 1", this.state.dataTemp1);
-        this.getLastTemp(1);
+        // this.getLastTemp(1);
         break;
 
       case 2:
+        this.getLastDoor(2);
+        this.getLastTemp(2);
         this.setState({
           tempSensor: "88AD1F",
           dataTempCurrent: this.state.dataTemp2,
           dataDoorCurrent: this.state.dataDoor2
         });
         console.log("sensor 2", this.state.dataTemp2);
-        this.getLastTemp(2);
+        // this.getLastTemp(2);
         break;
 
       case 3:
+        this.getLastDoor(3);
+        this.getLastTemp(3);
         this.setState({
           tempSensor: "88AD1A",
           dataTempCurrent: this.state.dataTemp3,
           dataDoorCurrent: this.state.dataDoor3 
         });
         console.log("sensor 3", this.state.dataTemp3);
-        this.getLastTemp(3);
+        // this.getLastTemp(3);
         break;
     }
-    console.log(this.state.dataTempCurrent);
+    // console.log(this.state.dataTempCurrent);
   }
 
   setCurrentDoorSensorTo(number) {
     switch (number) {
       case 1:
+      this.getLastDoor(1);
+      this.getLastTemp(1);
         this.setState({
           doorSensor: "88B318",
           dataTempCurrent: this.state.dataTemp1,
           dataDoorCurrent: this.state.dataDoor1
         });
         console.log("sensor 1", this.state.dataDoor1);
-        this.getLastDoor(1);
         break;
 
       case 2:
+        this.getLastDoor(2);
+        this.getLastTemp(2);
         this.setState({
           doorSensor: "88B329",
           dataTempCurrent: this.state.dataTemp2,
           dataDoorCurrent: this.state.dataDoor2
         });
         console.log("sensor 2", this.state.dataDoor2);
-        this.getLastDoor(2);
+        // this.getLastDoor(2);
         break;
 
       case 3:
+        this.getLastDoor(3);
+        this.getLastTemp(3);
         this.setState({
           doorSensor: "88B34C",
           dataTempCurrent: this.state.dataTemp3,
@@ -673,7 +685,7 @@ class App extends Component {
         break;
 
     }
-    console.log(this.state.dataDoorCurrent);
+    // console.log(this.state.dataDoorCurrent);
   }
 
   render() {
@@ -683,9 +695,9 @@ class App extends Component {
         tempTab,
         lastTempDate
       } = this.state;
-      console.log("lastTemp ", lastTemp);
-      console.log("tempTab ", tempTab);
-      console.log("lasttempDate ", lastTempDate);
+      // console.log("lastTemp ", lastTemp);
+      // console.log("tempTab ", tempTab);
+      // console.log("lasttempDate ", lastTempDate);
 
       {if (this.state.connected) {
       return ( 
@@ -803,13 +815,18 @@ class App extends Component {
           src = {
             Capture
           }
-          /> </div > <div className = "first-column" > { /* température */ } <div className = "card temp-card"
-          onClick = {
-            this.onTempClick.bind(this, 1)
-          }><div className = "card-title" ><span >
-          Alertes Température {
-            this.state.dataTempCurrent.device
-          } </span> </div > <div className = "card-content" >
+          /> </div > <div className = "first-column" > 
+          
+          
+          
+          { /* température */ }
+          
+          
+          <div className = "card temp-card" onClick = {this.onTempClick.bind(this, 1)}>
+            <div className = "card-title" >
+              <span >Alertes Température {this.state.dataTempCurrent.device} </span> 
+            </div > 
+          <div className = "card-content" >
           <div className = "card-left-content" >
           <div className = "card-data" >
           <div className = "number-display center" > {
