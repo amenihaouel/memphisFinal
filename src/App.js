@@ -749,18 +749,16 @@ class App extends Component {
             this.state.bothData
           }/> </Modal >
 
-          <header className = "App-header" > { /*<p className="App-title">Tableau de bord CASINO par IBM <img className="header-img" src={watson} /></p>*/ } <img className = "header-img"
+          <header className = "App-header" > { /*<p className="App-title">Tableau de bord CASINO par IBM <img className="header-img" src={watson} /></p>*/ } 
+          <img className = "header-img1"
           src = {
             casino
           } /> <div className = "header-menu right" >
-          <img className = "header-img right"
-          src = {
-            ibm
-          }/> <img className = "header-img right"
-          src = {
-            notifications
-          }
-          /> <img className = "header-img right lines"
+          <img className = "header-img right" src = {ibm}/> 
+          <a href="https://memphis.eu-gb.mybluemix.net/ui" target="_blank">
+          <img className = "header-img2 right" src = {notifications}></img>
+          </a>
+          <img className = "header-img right lines"
           src = {
             lines
           }/> </div > </header> <div className = "map-container" >

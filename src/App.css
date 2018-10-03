@@ -31,9 +31,22 @@
   width: auto;
   max-height: 100%;
   margin: 0 10px;
-  /*height: 8vh;*/
+  height: 8vh;
+  margin-top: 7%;
 }
-
+.header-img1{
+  width: auto;
+  max-height: 100%;
+  margin: 0 10px;
+  height: 12vh;
+}
+.header-img2{
+  width: auto;
+  max-height: 100%;
+  margin: 0 10px;
+  height: 8vh;
+  margin-top: 30%;
+}
 .header-menu {
   height: 8vh;
   float: right;
