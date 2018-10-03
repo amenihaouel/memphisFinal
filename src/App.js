@@ -97,10 +97,7 @@ class App extends Component {
       title: "Alertes pour le Rayon charcuterie",
       device: " Rayon charcuterie",
       type: "door",
-      data: [{
-        x: "1538257155",
-        y: 1
-      }]
+      data: []
     },
     dataTemp1: {
       id: "1",
@@ -379,8 +376,8 @@ class App extends Component {
     this.setState({
       dataTempCurrent: {
         id: "1",
-        title: "Température pour le capteur 1",
-        device: "capteur 1",
+        title: "Température pour le " + this.state.dataTempCurrent.device,
+        device: this.state.dataTempCurrent.device,
         type: "temp",
         data: tmpTab
       }
@@ -835,8 +832,7 @@ class App extends Component {
         <div className = "card-data" >
         <div className = "number-display" > {
           this.state.nbrNotifsTemp
-        }
-      fois </div> </div > <div className = "card-info-title" >
+        } alerte(s) </div> </div > <div className = "card-info-title" >
         <div className = "notif" > Dernières 5h </div> </div > </div> </div > </div>
 
         <div className = "card" >
@@ -870,7 +866,7 @@ class App extends Component {
         <div className = "card-data" >
         <div className = "red center" > {
           this.state.lastDoor
-        }  Ouvertures  </div> <div className = "icon-display" >
+        }  Ouverture(s)  </div> <div className = "icon-display" >
       
         <img className = "temp-img"
       src = {
@@ -888,10 +884,10 @@ class App extends Component {
     <div className = "card-data" >
     <div className = "number-display" > {
       this.state.nbrLastAlerts
-    } alertes </div> 
+    } alerte(s) </div> 
     </div > 
     <div className = "card-info-title" >
-    <div className = "notif" > Dernières 5 heurs   </div> 
+    <div className = "notif" > Dernières 5h   </div> 
     </div > </div> </div > </div>
 
   { /* Variations temp */ } <div className = "card"
