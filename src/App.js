@@ -15,6 +15,8 @@ import Map from "./GoogleMapsContainer.js";
 import io from "socket.io-client";
 import * as moment from "moment";
 
+import map from "./images/le41.png";
+
 import Capture from "./images/storeplan 2.png";
 import temps from "./images/thermometer.png";
 import doors from "./images/open-exit-door.png";
@@ -529,6 +531,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+   
     this.getLastTemp(1);
     this.getLastDoor(1);
 
@@ -762,7 +765,7 @@ class App extends Component {
             lines
           }/> </div > </header> <div className = "map-container" >
           <div className = "map-header" >
-          <span > Cartographie des magasins </span> </div > <Map className = "actual-map" / >
+          <span > Cartographie des magasins </span> </div > <img src={map} className = "actual-map" / >
           </div>
 
           <div className = "div-display" >
