@@ -1,5 +1,7 @@
+/*global google*/
 import React from 'react';
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
+import marker4casino from "./images/marker4casino.png";
 class GoogleMapsContainer extends React.Component {
 	constructor(props) {
 	  super(props);
@@ -28,6 +30,7 @@ class GoogleMapsContainer extends React.Component {
 		}
 	  }
 	  render() {
+	
 		return (
 			<React.Fragment>
 				<Map
@@ -39,24 +42,44 @@ class GoogleMapsContainer extends React.Component {
 				zoom = { 14 }
 				initialCenter = {{ lat: 48.870936, lng: 2.309818 }}
 				>
-					<Marker
+					<Marker 
 						onClick = { this.onMarkerClick }
-						title = { 'Changing Colors Garage' }
+						title = { 'Le 4' }
 						position = {{ lat: 48.870936, lng: 2.309818 }}
-						name = { 'Changing Colors Garage' }
+						name = { 'Le 4' }
+						icon = {marker4casino}
+						
 					/>
 					
+					
+					<Marker 
+						onClick = { this.onMarkerClick }
+						title = { 'Le 5' }
+						position = {{ lat: 48.867853, lng:  2.296481 }}
+						name = { 'Le 5' }
+						
+					/>
+					
+					<Marker 
+						onClick = { this.onMarkerClick }
+						title = { 'Le 6' }
+						position = {{ lat: 48.875421, lng: 2.341964 }}
+						name = { 'Le 6' }
+	
+					/>
+						<Marker 
+						onClick = { this.onMarkerClick }
+						title = { 'Le 7' }
+						position = {{ lat: 48.864240, lng: 2.375383 }}
+						name = { 'Le 7 ' }
+					/>
+	
 					<InfoWindow
 						marker = { this.state.activeMarker }
 						visible = { this.state.showingInfoWindow }
-						style = {{width: '90%', height: '34vh' }}
-
-						
+						style = {{width: '90%', height: '34vh' }}	
 					>
-					
-						Le 4<br />
-							
-					
+						Casino magasin augmenté<br />
 					</InfoWindow>
 				</Map>
 		  </React.Fragment>
@@ -64,5 +87,5 @@ class GoogleMapsContainer extends React.Component {
 	  }
 	}
 	export default GoogleApiWrapper({
-		api: ('AIzaSyBxdqbNXFP2qUMJMshc1RD4nsoExIGeM8k')
+		apiKey: ('AIzaSyBxdqbNXFP2qUMJMshc1RD4nsoExIGeM8k')
 	})(GoogleMapsContainer)

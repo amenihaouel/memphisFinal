@@ -14,7 +14,7 @@ class Login extends Component {
     render() {
 
         const fakeLogin = 'le4casino';
-        const fakePassword = 'magasinconnecte2018!';
+        const fakePassword = 'magasinaugmente2018!';
 
         const testmdp = function() {
             console.log('test mdp', this.state.login === fakeLogin && this.state.password === fakePassword);

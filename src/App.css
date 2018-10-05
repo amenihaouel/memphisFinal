@@ -231,7 +231,10 @@
   font-weight: bold;
   margin-top: 1%;
 }
-
+.le4{
+  width: 10000000px !important; 
+  height: 100000000000000000000px !important;
+}
 .temp-img {
   max-height: 80%;
   max-width: 100%;

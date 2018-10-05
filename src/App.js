@@ -23,7 +23,7 @@ import doors from "./images/open-exit-door.png";
 import ibm from "./images/ibm.png";
 import watts from "./images/ray.png";
 import casino from "./images/logoCasino.png";
-import watson from "./images/ibm_watson_avatar_200.png";
+import watson from "./images/watsonSpinSlow.gif";
 import notifications from "./images/notifications-bell-button with notif.png";
 import lines from "./images/lines.png";
 import {
@@ -158,7 +158,7 @@ class App extends Component {
   getLastDoor = (id) => {
     switch (id) {
       case 1:
-        fetch("https://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88B318", {
+        fetch("http://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88B318", {
             method: "GET",
             mode: "cors"
           })
@@ -179,7 +179,7 @@ class App extends Component {
         break;
 
       case 2:
-        fetch("https://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88B329", {
+        fetch("http://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88B329", {
             method: "GET",
             mode: "cors"
           })
@@ -200,7 +200,7 @@ class App extends Component {
         break;
 
       case 3:
-        fetch("https://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88B34C", {
+        fetch("http://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88B34C", {
             method: "GET",
             mode: "cors"
           })
@@ -225,7 +225,7 @@ class App extends Component {
   getLastTemp = (id) => {
     switch (id) {
       case 1:
-        fetch("https://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88AD22", {
+        fetch("http://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88AD22", {
             method: "GET",
             mode: "cors"
           })
@@ -763,7 +763,7 @@ class App extends Component {
             lines
           }/> </div > </header> <div className = "map-container" >
           <div className = "map-header" >
-          <span > Cartographie des magasins </span> </div > <img src={map} className = "actual-map" / >
+          <span > Cartographie des magasins </span> </div > <Map className = "actual-map" / >
           </div>
 
           <div className = "div-display" >
