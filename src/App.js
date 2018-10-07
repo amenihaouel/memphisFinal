@@ -158,7 +158,7 @@ class App extends Component {
   getLastDoor = (id) => {
     switch (id) {
       case 1:
-        fetch("http://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88B318", {
+        fetch("https://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88B318", {
             method: "GET",
             mode: "cors"
           })
@@ -179,7 +179,7 @@ class App extends Component {
         break;
 
       case 2:
-        fetch("http://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88B329", {
+        fetch("https://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88B329", {
             method: "GET",
             mode: "cors"
           })
@@ -200,7 +200,7 @@ class App extends Component {
         break;
 
       case 3:
-        fetch("http://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88B34C", {
+        fetch("https://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88B34C", {
             method: "GET",
             mode: "cors"
           })
@@ -225,7 +225,7 @@ class App extends Component {
   getLastTemp = (id) => {
     switch (id) {
       case 1:
-        fetch("http://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88AD22", {
+        fetch("https://memphis.eu-gb.mybluemix.net/getHisto?deviceid=88AD22", {
             method: "GET",
             mode: "cors"
           })
